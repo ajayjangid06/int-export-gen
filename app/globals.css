@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="text"] {
+    autocomplete: none !important;
+}
+
+.image-block {
+    position: relative;
+}
+
+.image-block .cross-icon {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    background: #e5e7eb;
+    padding: 7px;
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
