@@ -4,131 +4,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const MyUploads = () => {
-  const uploadedImagesDefault = [
-    {
-      id: 1,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 2,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 3,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 4,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 5,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 6,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-
-    {
-      id: 1,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 2,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 3,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 4,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 5,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 6,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 1,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 2,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 3,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 4,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 5,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 6,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 1,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 2,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 3,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 4,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-    {
-      id: 5,
-      imageUrl: "/test-img.jpg",
-      status: "In Queue",
-    },
-    {
-      id: 6,
-      imageUrl: "/test-img.jpg",
-      status: "Published",
-    },
-  ];
 
   const router = useRouter();
 
@@ -198,8 +76,8 @@ const MyUploads = () => {
                   </g>
                 </svg>
               </th>
-              <th scope="col" className="text-sm text-left px-3 py-4"></th>
-              <th scope="col" className="text-sm text-left px-3 py-4"></th>
+              <th scope="col" className="text-sm text-left px-3 py-4">Name</th>
+              <th scope="col" className="text-sm text-left px-3 py-4">Size</th>
             </tr>
           </thead>
           <tbody>
@@ -216,7 +94,12 @@ const MyUploads = () => {
                 </td>
                 <td className="text-sm text-left px-3 py-4">{data.status}</td>
                 <td>
-                  {data.originalName}
+                  <Link
+                    href={data.url}
+                    target="_blank"
+                  >
+                    {data.originalName}
+                  </Link>
                   {/* <button 
                     className="flex items-center text-sm text-left px-3 py-4"
                     // onClick={()=> window.open(data.url, '_blank', 'noopener,noreferrer')}

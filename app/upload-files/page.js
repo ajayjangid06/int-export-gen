@@ -20,7 +20,7 @@ const UploadForm = () => {
     
 
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         if (!date) {
             alert("Date is required");
@@ -41,7 +41,7 @@ const UploadForm = () => {
         formData.append("publishAt", publishAt);
         formData.append("imageData", imageUrl);
         try {
-            const response = axios.post(
+            const response = await axios.post(
                 `${process.env.NEXT_PUBLIC_API_URL}/upload`, 
                 formData, 
                 {
